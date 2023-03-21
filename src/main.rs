@@ -1,13 +1,12 @@
 mod data;
 
-use anyhow::Result;
 use crate::data::DataRow;
 use clickhouse::Client;
 
 #[tokio::main(flavor = "current_thread")]
-async fn main() -> Result<()> {
+async fn main() {
     let client = Client::default().with_url("http://localhost:8124");
-    let mut inserter = client.inserter("data")?.with_max_entries(1000);
+    let mut inserter = client.inserter("data").unwrap().with_max_entries(1000);
     let row = DataRow {
         metadata_id: "".to_string(),
         start_time: 0,
@@ -22,5 +21,4 @@ async fn main() -> Result<()> {
     inserter.write(&row).await.unwrap();
     inserter.commit().await.unwrap();
     inserter.end().await.unwrap();
-    Ok(())
 }
