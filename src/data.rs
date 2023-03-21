@@ -14,7 +14,7 @@ ch2rs data \
 pub struct DataRow {
     pub metadata_id: String,
     pub start_time: i64,
-    pub end_time: Option<i64>,
+    pub end_time: i64,
     pub double_value: f64,
     pub string_value: String,
     pub long_value: i64,

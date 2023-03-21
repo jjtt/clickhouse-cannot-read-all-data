@@ -10,7 +10,7 @@ async fn main() {
     let row = DataRow {
         metadata_id: "".to_string(),
         start_time: 0,
-        end_time: None,
+        end_time: 0,
         double_value: 0.0,
         string_value: "".to_string(),
         long_value: 0,
