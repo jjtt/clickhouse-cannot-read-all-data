@@ -1,0 +1,12 @@
+[package]
+name = "clickhouse-cannot-read-all-data"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.70"
+tokio = { version = "1.24.2", features = ["macros", "rt-multi-thread"] }
+clickhouse = { version = "0.11.3" }
+serde = { version = "1.0.147", features = ["derive"] }
